@@ -48,3 +48,26 @@ function convert() {
     })
     .catch(error => console.error(error));
 }
+
+/ Get historical exchange rates for a specific date
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  // Get the selected date from the date picker
+  const date = dateInput.value;
+  // Construct the API URL with the selected date
+  fetch(`https://api.exchangerate.host/${date}`)
+    .then(response => response.json())
+    .then(data => {
+      const rates = data.rates;
+      // Create an HTML list of exchange rates for the selected date
+      let ratesHTML = '<ul>';
+      for (const currency in rates) {
+        ratesHTML += `<li>${currency}: ${rates[currency]}</li>`;
+      }
+      ratesHTML += '</ul>';
+      // Display the exchange rates in the HTML element
+      ratesDisplay.innerHTML = `<h2>Exchange Rates for ${data.date}</h2>${ratesHTML}`;
+    })
+    .catch(error => console.error(error));
+});
+
