@@ -17,8 +17,7 @@ To use the application, simply go to foreignexchangewebapp.com. The web app is e
 License
 This web app is licensed under the MIT License. You are free to use, modify, and distribute the code as long as you include the original license and copyright notice.
 
-Contact
-If you have any questions, suggestions, or concerns about this application, please contact the developers at support@foreignexchangewebapp.com. We welcome your feedback and appreciate your interest in our project.
+
 
 
 
