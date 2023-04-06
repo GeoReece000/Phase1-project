@@ -71,3 +71,49 @@ form.addEventListener('submit', e => {
     .catch(error => console.error(error));
 });
 
+// Get time-series exchange rate data
+function getRates() {
+  // Get the start date and end date from the user
+  const startDate = document.getElementById('start-date').value;
+  const endDate = document.getElementById('end-date').value;
+  const maxDays = 366;
+  // Check that the start date is before the end date
+  if (startDate >= endDate) {
+    alert('Please select a start date before the end date.');
+    return;
+  }
+
+  // Check that the time frame is no more than 366
+ // Calculate the number of days between the start and end dates
+ const days = Math.ceil((new Date(endDate) - new Date(startDate)) / (1000 * 60 * 60 * 24));
+ if (days > maxDays) {
+   alert(`Please select a time frame of no more than ${maxDays} days.`);
+   return;
+ }
+
+ // Construct the API URL with the selected start and end dates
+ const apiUrl = `${timeseriesURL}?start_date=${startDate}&end_date=${endDate}&base=USD`;
+ 
+ // Fetch data from the API endpoint
+ fetch(apiUrl)
+   .then(response => response.json())
+   .then(data => {
+     const rates = data.rates;
+     let html = '<table><tr><th>Date</th><th>Rate</th></tr>';
+     
+     // Loop through each date and display the rate for that date
+     for (const date in rates) {
+       const rate = rates[date]['EUR'];
+       html += `<tr><td>${date}</td><td>${rate}</td></tr>`;
+     }
+     
+     html += '</table>';
+     document.getElementById('results').innerHTML = html;
+   })
+   .catch(error => {
+     console.error(error);
+     alert('An error occurred while fetching the data.');
+   });
+}
+
+
