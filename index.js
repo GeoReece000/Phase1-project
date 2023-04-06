@@ -30,3 +30,21 @@ fetch(endpoint)
         });
     })
     .catch(error => console.error(error));
+
+// Convert currencies
+function convert() {
+  // Get the amount, source currency, and target currency from the user
+  const amount = document.getElementById("amount").value;
+  const from = document.getElementById("from").value;
+  const to = document.getElementById("to").value;
+  // Construct the API URL with the user's input
+  const queryURL = `${convertURL}?from=${from}&to=${to}&amount=${amount}`;
+  // Fetch the conversion rate from the API and display the result
+  fetch(queryURL)
+    .then(response => response.json())
+    .then(data => {
+      const result = data.result;
+      document.getElementById("result").innerHTML = `${amount} ${from} = ${result} ${to}`;
+    })
+    .catch(error => console.error(error));
+}
