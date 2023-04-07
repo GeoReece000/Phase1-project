@@ -49,7 +49,7 @@ function convert() {
     .catch(error => console.error(error));
 }
 
-/ Get historical exchange rates for a specific date
+// Get historical exchange rates for a specific date
 form.addEventListener('submit', e => {
   e.preventDefault();
   // Get the selected date from the date picker
@@ -82,15 +82,15 @@ function getRates() {
     alert('Please select a start date before the end date.');
     return;
   }
-
-  // Check that the time frame is no more than 366
+  
+ // Check that the time frame is no more than 366
  // Calculate the number of days between the start and end dates
  const days = Math.ceil((new Date(endDate) - new Date(startDate)) / (1000 * 60 * 60 * 24));
  if (days > maxDays) {
    alert(`Please select a time frame of no more than ${maxDays} days.`);
    return;
  }
-
+ 
  // Construct the API URL with the selected start and end dates
  const apiUrl = `${timeseriesURL}?start_date=${startDate}&end_date=${endDate}&base=USD`;
  
@@ -115,5 +115,3 @@ function getRates() {
      alert('An error occurred while fetching the data.');
    });
 }
-
-
