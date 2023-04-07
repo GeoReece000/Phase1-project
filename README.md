@@ -1,6 +1,6 @@
 # Phase1-project
 Forex Exchange Web App
-This is a web application that provides users with the latest exchange rates, currency conversion, historical exchange rates, and timeseries data for the US dollar (USD), Euro (EUR), Japanese yen (JPY), and British pound (GBP). The application is available at foreignexchangewebapp.com.
+This is a web application that provides users with the latest exchange rates, currency conversion, historical exchange rates, and timeseries data for the US dollar (USD), Euro (EUR), Japanese yen (JPY), and British pound (GBP). 
 
 Features
 Latest Exchange Rate: Users can check the latest exchange rates for the USD against the EUR, JPY, and GBP.
