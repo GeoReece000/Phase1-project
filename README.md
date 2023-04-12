@@ -12,7 +12,7 @@ Historical Exchange Rates: Users can check what the USD was trading at up to 199
 Timeseries Data: Users can see a plotted graph of what the USD has been trading at for the past 366 days.
 
 Usage
-To use the application, simply go to foreignexchangewebapp.com. The web app is easy to navigate, with buttons and input fields clearly labeled. Users can choose the feature they want to use from the navigation menu and follow the instructions provided.
+To use the application, simply go to foreignexchangewebapp.com. The web app is easy to navigate, with buttons and input fields clearly labeled. Users can choose the feature they want to use from the navigation menu and follow the instructions provided. Users can access the web app by going to: https://georeece000.github.io/Phase1-project/
 
 License
 This web app is licensed under the MIT License. You are free to use, modify, and distribute the code as long as you include the original license and copyright notice.
